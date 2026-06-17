@@ -1,0 +1,25 @@
+# Maven build outputs
+**/target/
+*.class
+
+# Node / React Native build outputs
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE settings
+.idea/
+*.iml
+.vscode/
+
+# Local configuration overrides
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log

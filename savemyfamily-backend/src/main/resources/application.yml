@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: savemyfamily-api
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/save_my_family_db
+    redis:
+      host: localhost
+      port: 6379
+
+# Third-party integrations for SMS & Push Alerts
+suraksha:
+  twilio:
+    account-sid: "AC_twilio_mock_account_sid_placeholder"
+    auth-token: "mock_auth_token_placeholder"
+    from-phone-number: "+15005550006"
+  firebase:
+    service-account-json-path: "classpath:firebase-service-account.json"
