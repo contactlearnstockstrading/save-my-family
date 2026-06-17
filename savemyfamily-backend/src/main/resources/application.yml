@@ -6,7 +6,7 @@ spring:
     name: savemyfamily-api
   data:
     mongodb:
-      uri: mongodb://localhost:27017/save_my_family_db
+      uri: mongodb+srv://admin:admin123@hire365.pnw0i9z.mongodb.net/save_my_family_db?retryWrites=true&w=majority&appName=hire365
     redis:
       host: localhost
       port: 6379
