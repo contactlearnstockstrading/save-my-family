@@ -63,14 +63,14 @@ class LocationService {
   public getCurrentLocation(): Promise<Coordinates> {
     return new Promise((resolve, reject) => {
       // Utilizes HTML5 Geolocation API which maps directly to react-native-geolocation-service
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
+      (navigator as any).geolocation.getCurrentPosition(
+        (position: any) => {
           resolve({
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
           });
         },
-        (error) => {
+        (error: any) => {
           reject(error);
         },
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
@@ -85,14 +85,14 @@ class LocationService {
     onUpdate: (coords: Coordinates) => void,
     onError: (err: any) => void
   ): number {
-    return navigator.geolocation.watchPosition(
-      (position) => {
+    return (navigator as any).geolocation.watchPosition(
+      (position: any) => {
         onUpdate({
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         });
       },
-      (error) => {
+      (error: any) => {
         onError(error);
       },
       {
@@ -108,7 +108,7 @@ class LocationService {
    * Unsubscribe from coordinate watches
    */
   public clearWatch(watchId: number) {
-    navigator.geolocation.clearWatch(watchId);
+    (navigator as any).geolocation.clearWatch(watchId);
   }
 }
 
